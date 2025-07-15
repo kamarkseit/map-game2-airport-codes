@@ -800,7 +800,7 @@ numberInput.addEventListener("change", (event) => {
     let i = 0;
     let player_data = [];
     // set the image for the first question
-    document.getElementById('airportID').src = `./images/${gameOrder[i].imageCode}.png`;
+    document.getElementById('airportID').src = `${gameOrder[i].imageCode}.png`;
     // set score information to display properly
     let gameResult = `No results yet. Make sure you answer all questions.`;
     document.getElementById("scoreID").innerText = gameResult;
@@ -835,7 +835,7 @@ function playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data, game
             // this condition will check if need to continue iteration or the game is complete
             if (player_data.length !== numOfQuestions) {
                 i++
-                document.getElementById('airportID').src = `images/${gameOrder[i].imageCode}.png`;
+                document.getElementById('airportID').src = `${gameOrder[i].imageCode}.png`;
             }
             else {
                 // prepare and display the score string with necessary score variables
@@ -849,7 +849,7 @@ function playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data, game
                 }
                 document.getElementById("scoreID").innerText = gameResult;
                 // blank image is set instead of airport image
-                document.getElementById('airportID').src = `images/blank.png`;
+                document.getElementById('airportID').src = `blank.png`;
                 gameCompleted = true;
             }
         }

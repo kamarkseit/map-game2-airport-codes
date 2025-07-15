@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(175, 233, 175);
+}
+
+.mapClass {
+    width: 960px;
+    height: 620px;
+}
+
+.calcClass {
+    width: 100px;
+    height: 50px;
+}
+
+.playAgClass {
+    width: 100px;
+    height: 50px;
+}
+
+.airportClass {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    left: 1012px;
+}
+
+.d-inline {
+    width: 1000px;
+    display: inline;
+}

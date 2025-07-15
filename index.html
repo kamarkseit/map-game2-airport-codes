@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>MapGame</title>
+</head>
+
+<body>
+    <h1>
+        Let's check your knowledge of some US airport codes.
+    </h1>
+    <p>
+        Start the game by clicking on the correct dot on the map. Good luck!
+    </p>
+
+    <label for="nquestionsID">Select number of questions (between 1 and 20):</label>
+    <input type="number" id="nquestionsID" name="nquestions" min="1" max="20">
+
+    <div id="divMap">
+        <img id="mapAllegiantID" src="images/AllegiantMap.png" class="mapClass" />
+    </div>
+
+    <div id="controlsID" class="d-inline">
+        <span id="scoreID">
+
+        </span>
+    </div>
+
+    <img id="airportID" src="images/blank.png" class="airportClass" />
+
+    <script src="script.js"></script>
+</body>
+
+</html>

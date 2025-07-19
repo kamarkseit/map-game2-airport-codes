@@ -1,772 +1,16 @@
 'use strict'
 
-/////////////////////////// LOAD THE DATA (for 123 airports) //////////////////////////////////
-let data = [
-    {
-        "airport": "BLI",
-        "imageCode": 0,
-        "x": 99,
-        "y": 36
-    },
-    {
-        "airport": "GPI",
-        "imageCode": 19,
-        "x": 217,
-        "y": 72
-    },
-    {
-        "airport": "GEG",
-        "imageCode": 17,
-        "x": 167,
-        "y": 77
-    },
-    {
-        "airport": "MOT",
-        "imageCode": 36,
-        "x": 409,
-        "y": 92
-    },
-    {
-        "airport": "GTF",
-        "imageCode": 20,
-        "x": 258,
-        "y": 97
-    },
-    {
-        "airport": "GFK",
-        "imageCode": 37,
-        "x": 471,
-        "y": 100
-    },
-    {
-        "airport": "BGR",
-        "imageCode": 78,
-        "x": 910,
-        "y": 100
-    },
-    {
-        "airport": "MSO",
-        "imageCode": 21,
-        "x": 215,
-        "y": 102
-    },
-    {
-        "airport": "PSC",
-        "imageCode": 18,
-        "x": 137,
-        "y": 103
-    },
-    {
-        "airport": "PDX",
-        "imageCode": 1,
-        "x": 79,
-        "y": 104
-    },
-    {
-        "airport": "PBG",
-        "imageCode": 79,
-        "x": 840,
-        "y": 123
-    },
-    {
-        "airport": "FAR",
-        "imageCode": 39,
-        "x": 476,
-        "y": 124
-    },
-    {
-        "airport": "BIS",
-        "imageCode": 38,
-        "x": 415,
-        "y": 125
-    },
-    {
-        "airport": "EUG",
-        "imageCode": 2,
-        "x": 62,
-        "y": 134
-    },
-    {
-        "airport": "BZN",
-        "imageCode": 22,
-        "x": 256,
-        "y": 134
-    },
-    {
-        "airport": "BIL",
-        "imageCode": 23,
-        "x": 295,
-        "y": 139
-    },
-    {
-        "airport": "PSM",
-        "imageCode": 80,
-        "x": 892,
-        "y": 146
-    },
-    {
-        "airport": "STC",
-        "imageCode": 47,
-        "x": 519,
-        "y": 153
-    },
-    {
-        "airport": "TVC",
-        "imageCode": 65,
-        "x": 653,
-        "y": 160
-    },
-    {
-        "airport": "BOS",
-        "imageCode": 81,
-        "x": 892,
-        "y": 161
-    },
-    {
-        "airport": "MSP",
-        "imageCode": 48,
-        "x": 532,
-        "y": 166
-    },
-    {
-        "airport": "ALB",
-        "imageCode": 85,
-        "x": 846,
-        "y": 167
-    },
-    {
-        "airport": "BOI",
-        "imageCode": 24,
-        "x": 168,
-        "y": 169
-    },
-    {
-        "airport": "SYR",
-        "imageCode": 84,
-        "x": 808,
-        "y": 169
-    },
-    {
-        "airport": "MFR",
-        "imageCode": 3,
-        "x": 57,
-        "y": 171
-    },
-    {
-        "airport": "ROC",
-        "imageCode": 83,
-        "x": 783,
-        "y": 173
-    },
-    {
-        "airport": "ATW",
-        "imageCode": 58,
-        "x": 608,
-        "y": 175
-    },
-    {
-        "airport": "IAG",
-        "imageCode": 86,
-        "x": 764,
-        "y": 178
-    },
-    {
-        "airport": "PVD",
-        "imageCode": 82,
-        "x": 890,
-        "y": 178
-    },
-    {
-        "airport": "IDA",
-        "imageCode": 25,
-        "x": 234,
-        "y": 182
-    },
-    {
-        "airport": "RAP",
-        "imageCode": 40,
-        "x": 378,
-        "y": 186
-    },
-    {
-        "airport": "ELM",
-        "imageCode": 87,
-        "x": 799,
-        "y": 191
-    },
-    {
-        "airport": "FNT",
-        "imageCode": 67,
-        "x": 686,
-        "y": 194
-    },
-    {
-        "airport": "SWF",
-        "imageCode": 88,
-        "x": 849,
-        "y": 194
-    },
-    {
-        "airport": "FSD",
-        "imageCode": 41,
-        "x": 477,
-        "y": 197
-    },
-    {
-        "airport": "GRR",
-        "imageCode": 66,
-        "x": 660,
-        "y": 199
-    },
-    {
-        "airport": "EWR",
-        "imageCode": 90,
-        "x": 851,
-        "y": 213
-    },
-    {
-        "airport": "ABE",
-        "imageCode": 89,
-        "x": 832,
-        "y": 218
-    },
-    {
-        "airport": "RFD",
-        "imageCode": 59,
-        "x": 603,
-        "y": 222
-    },
-    {
-        "airport": "TOL",
-        "imageCode": 69,
-        "x": 691,
-        "y": 223
-    },
-    {
-        "airport": "SBN",
-        "imageCode": 68,
-        "x": 649,
-        "y": 227
-    },
-    {
-        "airport": "MDW",
-        "imageCode": 60,
-        "x": 626,
-        "y": 229
-    },
-    {
-        "airport": "CID",
-        "imageCode": 50,
-        "x": 561,
-        "y": 232
-    },
-    {
-        "airport": "CAK",
-        "imageCode": 91,
-        "x": 732,
-        "y": 232
-    },
-    {
-        "airport": "MDT",
-        "imageCode": 92,
-        "x": 812,
-        "y": 233
-    },
-    {
-        "airport": "PIT",
-        "imageCode": 93,
-        "x": 755,
-        "y": 238
-    },
-    {
-        "airport": "MLI",
-        "imageCode": 51,
-        "x": 583,
-        "y": 241
-    },
-    {
-        "airport": "DSM",
-        "imageCode": 49,
-        "x": 531,
-        "y": 242
-    },
-    {
-        "airport": "FWA",
-        "imageCode": 70,
-        "x": 671,
-        "y": 242
-    },
-    {
-        "airport": "RNO",
-        "imageCode": 13,
-        "x": 90,
-        "y": 246
-    },
-    {
-        "airport": "OMA",
-        "imageCode": 42,
-        "x": 493,
-        "y": 248
-    },
-    {
-        "airport": "HGR",
-        "imageCode": 96,
-        "x": 798,
-        "y": 248
-    },
-    {
-        "airport": "BWI",
-        "imageCode": 97,
-        "x": 820,
-        "y": 252
-    },
-    {
-        "airport": "PVU",
-        "imageCode": 26,
-        "x": 228,
-        "y": 256
-    },
-    {
-        "airport": "PIA",
-        "imageCode": 61,
-        "x": 597,
-        "y": 256
-    },
-    {
-        "airport": "GRI",
-        "imageCode": 43,
-        "x": 453,
-        "y": 257
-    },
-    {
-        "airport": "BMI",
-        "imageCode": 62,
-        "x": 611,
-        "y": 260
-    },
-    {
-        "airport": "LCK",
-        "imageCode": 95,
-        "x": 711,
-        "y": 261
-    },
-    {
-        "airport": "IAD",
-        "imageCode": 100,
-        "x": 807,
-        "y": 263
-    },
-    {
-        "airport": "CKB",
-        "imageCode": 99,
-        "x": 759,
-        "y": 265
-    },
-    {
-        "airport": "DAY",
-        "imageCode": 94,
-        "x": 690,
-        "y": 266
-    },
-    {
-        "airport": "IND",
-        "imageCode": 71,
-        "x": 657,
-        "y": 272
-    },
-    {
-        "airport": "OAK",
-        "imageCode": 4,
-        "x": 42,
-        "y": 274
-    },
-    {
-        "airport": "SPI",
-        "imageCode": 63,
-        "x": 598,
-        "y": 274
-    },
-    {
-        "airport": "SCK",
-        "imageCode": 5,
-        "x": 59,
-        "y": 276
-    },
-    {
-        "airport": "DEN",
-        "imageCode": 28,
-        "x": 341,
-        "y": 278
-    },
-    {
-        "airport": "CVG",
-        "imageCode": 98,
-        "x": 688,
-        "y": 280
-    },
-    {
-        "airport": "GJT",
-        "imageCode": 27,
-        "x": 278,
-        "y": 287
-    },
-    {
-        "airport": "MCI",
-        "imageCode": 52,
-        "x": 514,
-        "y": 292
-    },
-    {
-        "airport": "HTS",
-        "imageCode": 101,
-        "x": 723,
-        "y": 292
-    },
-    {
-        "airport": "RIC",
-        "imageCode": 103,
-        "x": 816,
-        "y": 294
-    },
-    {
-        "airport": "ORF",
-        "imageCode": 104,
-        "x": 837,
-        "y": 302
-    },
-    {
-        "airport": "MRY",
-        "imageCode": 7,
-        "x": 41,
-        "y": 303
-    },
-    {
-        "airport": "BLV",
-        "imageCode": 64,
-        "x": 599,
-        "y": 305
-    },
-    {
-        "airport": "SDF",
-        "imageCode": 73,
-        "x": 668,
-        "y": 306
-    },
-    {
-        "airport": "LEX",
-        "imageCode": 105,
-        "x": 689,
-        "y": 306
-    },
-    {
-        "airport": "FAT",
-        "imageCode": 6,
-        "x": 78,
-        "y": 307
-    },
-    {
-        "airport": "ROA",
-        "imageCode": 102,
-        "x": 771,
-        "y": 309
-    },
-    {
-        "airport": "EVV",
-        "imageCode": 72,
-        "x": 640,
-        "y": 313
-    },
-    {
-        "airport": "ICT",
-        "imageCode": 44,
-        "x": 467,
-        "y": 330
-    },
-    {
-        "airport": "TRI",
-        "imageCode": 106,
-        "x": 732,
-        "y": 334
-    },
-    {
-        "airport": "GSO",
-        "imageCode": 107,
-        "x": 778,
-        "y": 335
-    },
-    {
-        "airport": "LAS",
-        "imageCode": 14,
-        "x": 154,
-        "y": 338
-    },
-    {
-        "airport": "SGF",
-        "imageCode": 53,
-        "x": 539,
-        "y": 339
-    },
-    {
-        "airport": "SMX",
-        "imageCode": 8,
-        "x": 57,
-        "y": 345
-    },
-    {
-        "airport": "BNA",
-        "imageCode": 75,
-        "x": 659,
-        "y": 353
-    },
-    {
-        "airport": "TYS",
-        "imageCode": 109,
-        "x": 706,
-        "y": 354
-    },
-    {
-        "airport": "USA",
-        "imageCode": 111,
-        "x": 767,
-        "y": 354
-    },
-    {
-        "airport": "AVL",
-        "imageCode": 110,
-        "x": 733,
-        "y": 357
-    },
-    {
-        "airport": "XNA",
-        "imageCode": 54,
-        "x": 523,
-        "y": 360
-    },
-    {
-        "airport": "TUL",
-        "imageCode": 45,
-        "x": 496,
-        "y": 363
-    },
-    {
-        "airport": "GSP",
-        "imageCode": 113,
-        "x": 743,
-        "y": 370
-    },
-    {
-        "airport": "LAX",
-        "imageCode": 9,
-        "x": 86,
-        "y": 372
-    },
-    {
-        "airport": "CHA",
-        "imageCode": 112,
-        "x": 687,
-        "y": 374
-    },
-    {
-        "airport": "SNA",
-        "imageCode": 10,
-        "x": 97,
-        "y": 381
-    },
-    {
-        "airport": "OKC",
-        "imageCode": 46,
-        "x": 465,
-        "y": 381
-    },
-    {
-        "airport": "MEM",
-        "imageCode": 76,
-        "x": 603,
-        "y": 382
-    },
-    {
-        "airport": "PSP",
-        "imageCode": 11,
-        "x": 122,
-        "y": 384
-    },
-    {
-        "airport": "MYR",
-        "imageCode": 114,
-        "x": 804,
-        "y": 384
-    },
-    {
-        "airport": "LIT",
-        "imageCode": 55,
-        "x": 563,
-        "y": 393
-    },
-    {
-        "airport": "SAN",
-        "imageCode": 12,
-        "x": 105,
-        "y": 405
-    },
-    {
-        "airport": "PHX",
-        "imageCode": 15,
-        "x": 201,
-        "y": 405
-    },
-    {
-        "airport": "CHS",
-        "imageCode": 115,
-        "x": 789,
-        "y": 405
-    },
-    {
-        "airport": "IWA",
-        "imageCode": 16,
-        "x": 208,
-        "y": 408
-    },
-    {
-        "airport": "SAV",
-        "imageCode": 116,
-        "x": 772,
-        "y": 427
-    },
-    {
-        "airport": "SHV",
-        "imageCode": 56,
-        "x": 536,
-        "y": 446
-    },
-    {
-        "airport": "ELP",
-        "imageCode": 29,
-        "x": 301,
-        "y": 454
-    },
-    {
-        "airport": "JAX",
-        "imageCode": 117,
-        "x": 770,
-        "y": 464
-    },
-    {
-        "airport": "VPS",
-        "imageCode": 74,
-        "x": 677,
-        "y": 477
-    },
-    {
-        "airport": "MSY",
-        "imageCode": 57,
-        "x": 606,
-        "y": 493
-    },
-    {
-        "airport": "AUS",
-        "imageCode": 32,
-        "x": 464,
-        "y": 497
-    },
-    {
-        "airport": "SFB",
-        "imageCode": 118,
-        "x": 783,
-        "y": 500
-    },
-    {
-        "airport": "HOU",
-        "imageCode": 35,
-        "x": 512,
-        "y": 508
-    },
-    {
-        "airport": "SAT",
-        "imageCode": 31,
-        "x": 450,
-        "y": 511
-    },
-    {
-        "airport": "MLB",
-        "imageCode": 119,
-        "x": 796,
-        "y": 511
-    },
-    {
-        "airport": "PIE",
-        "imageCode": 77,
-        "x": 758,
-        "y": 522
-    },
-    {
-        "airport": "SRQ",
-        "imageCode": 108,
-        "x": 763,
-        "y": 533
-    },
-    {
-        "airport": "PBI",
-        "imageCode": 120,
-        "x": 815,
-        "y": 540
-    },
-    {
-        "airport": "PGD",
-        "imageCode": 122,
-        "x": 775,
-        "y": 544
-    },
-    {
-        "airport": "FLL",
-        "imageCode": 121,
-        "x": 815,
-        "y": 553
-    },
-    {
-        "airport": "LRD",
-        "imageCode": 33,
-        "x": 428,
-        "y": 555
-    },
-    {
-        "airport": "MFE",
-        "imageCode": 34,
-        "x": 453,
-        "y": 586
-    },
-    {
-        "airport": "EYW",
-        "imageCode": 30,
-        "x": 790,
-        "y": 594
-    }
-]
-
-// const getGameData = async () => {
-//     const getData = async () => { await fetch('./output.json') }
-//     const responseBody = async () => { await getData.json(); }
-// const address = fetch("https://jsonplaceholder.typicode.com/users/1")
-//     .then((response) => response.json())
-//     .then((user) => {
-//         return user.address;
-//     });
-// return JSON.parse(responseBody)
-// console.log(responseBody)
-// async function getJSONData() {
-//     let a = await getData()
-//     return a;
-// }
-// const outputData = getJSONData()
-// console.log(outputData)
-// console.log(outputData.value)
-// }
-// 
-
-
 //////////////////////////// FUNCTIONS //////////////////////////////
+async function myData() {
+    var d = await fetch("./dataImport.json")
+        .then(data => data.json())
+        .then(res => res);
+    return d;
+}
+// Function to compare player's x and y location to the correct x and y
 function myCompare(arg1, arg2) {
     if (arg1.airport === arg2.airport && arg1.imageCode === arg2.imageCode) {
-        if (arg2.x <= arg1.x + 5 && arg2.x >= arg1.x - 5 && arg2.y <= arg1.y + 5 && arg2.y >= arg1.y - 5) {
+        if (arg2.x <= arg1.x + 7 && arg2.x >= arg1.x - 7 && arg2.y <= arg1.y + 7 && arg2.y >= arg1.y - 7) {
             return true;
         }
         return false;
@@ -774,47 +18,12 @@ function myCompare(arg1, arg2) {
     console.log('Attention: The compare function compares different airports!');
 }
 
-//////////////////////////// VARIABLES /////////////////////////////////////
-
-const box = document.querySelector('.mapClass');
-
-/////////////////////// GET PLAYER'S INPUT ON NUMBER OF QUESTIONS ////////////////
-
-const numberInput = document.getElementById("nquestionsID");
-let numOfQuestions = numberInput.value;
-numberInput.addEventListener("change", (event) => {
-    numOfQuestions = parseInt(event.target.value)
-
-    // shuffle the data for random order of questions
-    const gameOrder = [];
-    let temp = data;
-    for (let j = 0; j < data.length; j++) {
-        const randomValue = Math.floor(Math.random() * temp.length)
-        gameOrder.push(temp[randomValue])
-        temp = temp.filter(function (item) {
-            return item !== temp[randomValue]
-        })
-    }
-
-    // set few more variables
-    let i = 0;
-    let player_data = [];
-    // set the image for the first question
-    document.getElementById('airportID').src = `${gameOrder[i].imageCode}.png`;
-    // set score information to display properly
-    let gameResult = `No results yet. Make sure you answer all questions.`;
-    document.getElementById("scoreID").innerText = gameResult;
-    // make a boolean for when the game is completed
-    let gameCompleted = false;
-    // set a timeout so that two eventlisteners are not triggered at the same time
-    setTimeout(() => {
-        playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data, gameResult)
-    }, 500)
-
-})
-
-function playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data, gameResult) {
+let gameCompleted = false;
+// Function that starts the game and finishes it with the results displayed
+function playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data) {
     //start event listener to click dots on the map image
+    // when the game starts make the airplane move.
+    document.addEventListener("mousemove", moveAirplane)
     box.addEventListener('click', event => {
         // check if the game has been completed
         if (gameCompleted === true) {
@@ -842,20 +51,95 @@ function playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data, game
                 const numberOfCorrect = player_data.filter((item) => item.isCorrect == true).length;
                 const wrongAirports = player_data.filter((item) => item.isCorrect == false).map((airport) => airport.airport);
                 if (numberOfCorrect === numOfQuestions) {
-                    gameResult = `You scored ${numberOfCorrect} out of ${numOfQuestions}. Great job!`;
+                    displayMessage(`You scored ${numberOfCorrect} out of ${numOfQuestions}. Great job!`);
                 }
                 else {
-                    gameResult = `You scored ${numberOfCorrect} out of ${numOfQuestions}. You need more practice with: ${wrongAirports.join(", ")}`;
+                    displayMessage(`You scored ${numberOfCorrect} out of ${numOfQuestions}. You need more practice with: ${wrongAirports.join(", ")}`);
                 }
-                document.getElementById("scoreID").innerText = gameResult;
                 // blank image is set instead of airport image
                 document.getElementById('airportID').src = `blank.png`;
                 gameCompleted = true;
+                document.querySelector("#airplaneID").style.left = `10px`;
+                document.querySelector("#airplaneID").style.top = `10px`;
+                // stop the airplane from moving when the game ends.
+                document.removeEventListener("mousemove", moveAirplane)
             }
         }
     })
 }
 
+//////////////////////////// VARIABLES /////////////////////////////////////
+const box = document.querySelector('.mapClass');
+
+const displayMessage = function (message) {
+    document.querySelector('.message').textContent = message;
+};
+
+const numberInput = document.getElementById("nquestionsID");
+let numOfQuestions = numberInput.value;
+
+let data;
+
+let gameStarted = false;
+
+let arrTemp = [];
 
 
+/////////////////////////// MAIN EVENT LISTENER //////////////////////////////////
+numberInput.addEventListener("change", async (event) => {
+    numOfQuestions = parseInt(event.target.value)
+    data = await myData()
+    data.forEach((e) => { arrTemp.push([e.x, e.y]) })
+    // When entering improper input
+    if (!numOfQuestions || numOfQuestions > 20 || numOfQuestions < 1) {
+        displayMessage("You've entered incorrect number of questions!");
+    }
+    else {
+        displayMessage("")
+        // shuffle the data for random order of questions
+        const gameOrder = [];
+        let temp = data;
+        for (let j = 0; j < data.length; j++) {
+            const randomValue = Math.floor(Math.random() * temp.length)
+            gameOrder.push(temp[randomValue])
+            temp = temp.filter(function (item) {
+                return item !== temp[randomValue]
+            })
+        }
+        // set few more variables
+        let i = 0;
+        let player_data = [];
 
+        // set the image for the first question
+        document.getElementById('airportID').src = `${gameOrder[i].imageCode}.png`;
+
+        // set a timeout so that two eventlisteners are not triggered at the same time
+        setTimeout(() => {
+            gameStarted = true;
+            playGame(gameCompleted, i, numOfQuestions, gameOrder, player_data);
+        }, 500)
+    }
+})
+
+
+/////////////////////////// SHOW AIRPLANE ICON ///////////////////////////////
+
+//document.addEventListener("mousemove", moveAirplane)
+
+function moveAirplane(event) {
+    if (gameStarted === true) {
+        console.log(gameCompleted)
+        document.querySelector("#airplaneID").style.left = `10px`;
+        document.querySelector("#airplaneID").style.top = `10px`;
+        const rect = box.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top + 5;
+        // console.log(`Current cursor position is: ${mouseX} and ${mouseY}`)
+        arrTemp.forEach(v => {
+            if (((mouseX >= v[0] - 5) && (mouseX <= v[0] + 5)) && ((mouseY >= v[1] - 5) && (mouseY <= v[1] + 5))) {
+                document.querySelector("#airplaneID").style.left = `${mouseX}px`;
+                document.querySelector("#airplaneID").style.top = `${mouseY}px`;
+            }
+        })
+    }
+}
